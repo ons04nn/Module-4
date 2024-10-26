@@ -1,0 +1,274 @@
+
+@import url('https://fonts.googleapis.com/css2?family=Ubuntu+Sans:ital,wght@0,100..800;1,100..800&display=swap');
+
+*{
+  margin:0;
+  padding:0;
+  box-sizing: border-box;
+  font-family: Arial, Helvetica, sans-serif;
+  list-style: none;
+  text-decoration: 0;
+}
+
+html{
+  display: flex;
+  justify-content: center;
+
+
+}
+
+header{display:flex;
+justify-content: space-between;
+height: 75px;
+align-items: center;
+width: 1070px;
+}
+
+body{
+  width: 1200px;
+  display: flex;
+  flex-direction: column;
+    align-items: center;
+ 
+ 
+}
+
+main{
+  display: flex;
+  flex-direction: column;
+    justify-content: center;
+    align-items: flex-end;
+}
+
+.slide{
+  background-image: url(../img/BG.png);
+  background-repeat: no-repeat;
+background-size: cover;
+width: 1070px;
+height: 582px;
+display: flex;
+flex-direction: column;
+align-items: center;
+margin-top: 50px;
+padding: 62px;
+}
+
+
+
+h1{
+  font-family:"Ubuntu Sans";
+  font-size: 36px;
+  color: #fff;
+  margin-bottom: 25px;
+  font-weight: 700;
+}
+
+
+p{
+
+  font-family: "Ubuntu Sans", serif;
+  font-size: 10px;
+font-weight: 700;
+  
+}
+
+p{
+
+  font-family: "Ubuntu Sans", serif;
+  font-size: 10px;
+
+  
+}
+
+.btn-new {
+  border: solid white 1px;
+  border-radius: 100px;
+  text-decoration: none;
+  background-color:#0A0A28 ;
+  color: none;
+  cursor: pointer;
+z-index: 4;
+
+}
+
+.btn-new:hover {
+
+  background-color: #0E1C65;
+ 
+}
+
+
+.wrapper{
+  z-index: 5;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+header ul{
+  display: flex;
+} 
+
+header ul li{
+  padding-left: 20px;
+}
+
+.list {font-family: "Ubuntu Sans"}
+
+.logo{
+  height: 37px;
+  margin-bottom: 257px;
+}
+
+.text{display: flex;}
+
+.text_1{width:182px;}
+
+
+.tag_b{
+
+  font-family: "Ubuntu Sans", serif;
+  font-size: 16px;
+  font-weight: 400;
+  background-color: #080A4C;
+  color: white; 
+  width: 153px;
+  height: 43px;
+  border-radius: 20px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  
+}
+
+.tag_w {
+  font-family: "Ubuntu Sans", serif;
+  font-size: 16px;
+  font-weight: 400;
+  color: #080A4C; 
+  border: solid #080A4C;
+  border-color: #080A4C;
+  border-radius: 20px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 365px;
+}
+footer{
+  display: flex;
+  width: 1070px;
+  height: 217px;
+  align-items: center;
+  justify-content: space-between;
+}
+footer ul{
+  display: flex;
+} 
+
+
+
+.horwrap{display: flex;
+flex-direction: row;}
+.verwrap{display: flex;
+flex-direction: column;}
+
+.mission_text{
+margin-left: 43px;
+}
+
+.footer_first {
+display: flex;
+}
+
+.horwrap_sp{display: flex;
+  flex-direction: row;
+justify-content: space-between;}
+
+
+.foot_tag {display: flex;
+  justify-content: center;
+  margin-top:15px;
+}
+
+footer ul{
+display: flex;
+justify-content: space-between;
+}
+
+.foot {
+  height: 26px;
+}
+
+.small_text{
+  font-size: 14px;
+margin-top:19px;
+font-weight: 400;
+}
+
+.contacts{
+  width:370px;
+  height: 63px;
+}
+
+.social {
+  display: flex;
+  align-items: center;
+  height: 26px;
+}
+
+.logo_2{
+  height: 28px;
+}
+
+.tg{margin-left:20px;}
+
+.form {
+display: flex;
+flex-direction: row;
+}
+
+
+.email-field {
+}
+/* стили для label */
+.email-field__label {
+  display: block;
+}
+/* стили для input */
+.email-field__input {
+  display: block;
+  width: 265px;
+  height: 31px;
+  font-family: inherit;
+  font-size: 10px;
+  font-weight: 700;
+  color: #080A4C;
+  background-color: #fff;
+  background-clip: padding-box;
+  border: 1px solid #080A4C;
+  border-radius: 25px;
+  transition: border-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out;
+  padding: 10px;
+}
+
+::placeholder {
+  color: #080A4C;
+}
+
+.button {
+  width: 131px;
+  height: 31px;
+  border: solid white;
+  border-radius: 25px;
+  background: none;
+  color: #fff;
+  font-size: 10px;
+  font-weight: 700;
+  margin-left: 7px;
+}
+
+.button:hover {
+  background: #080A4C;
+  cursor: pointer;
+
+}
