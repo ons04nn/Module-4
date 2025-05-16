@@ -33,8 +33,12 @@ body {
     font-family: 'Involve', Inter, sans-serif;
     background-color: #090923;
     scroll-behavior: smooth;
-    background-image: url(./src/assets/images/Group.2087327242.png);
     background-repeat: no-repeat;
+}
+
+body .no_bg {
+      background-image: none;
+
 }
 
 
@@ -384,6 +388,7 @@ li:nth-child(even) {
 ul::column {
   scroll-snap-align: center;
 }
+
 ul::scroll-button(*) {
   border: 0;
   font-size: 2rem;
@@ -402,9 +407,11 @@ ul::scroll-button(*):active {
 }
 
 ul::scroll-button(*):disabled {
-  color: rgb(0 0 0 / 0.2);
+  color: rgb(0 0 0 / 0);
   cursor: unset;
 }
+
+.menu .ul {color: rgba(0,0,0,0)}
 
 ul::scroll-button(left) {
   content: "◄";
@@ -464,7 +471,7 @@ ul::column::scroll-marker:target-current {
     position: absolute;
     top: 0;
     margin:auto;
-    opacity: 0.4;
+    opacity: 0.43;
     background-repeat: no-repeat;
     background-size: contain;
     width: 100%;
@@ -473,7 +480,7 @@ ul::column::scroll-marker:target-current {
 }
 
 .why-sleep {
-    padding-top: 197px;
+    padding-top: 0 px;
     margin-bottom: 160px;
     
     
@@ -484,7 +491,7 @@ ul::column::scroll-marker:target-current {
     left: 50%;
     transform: translate(-50%, -50%);
     margin-left: 400px;
-    margin-top: -300px; 
+    margin-top: -400px; 
 }
 
 
@@ -650,6 +657,12 @@ p {
     color: white;
     line-height: 28px;
 }
+.textfoot
+{ font-size: 24px;
+    font-family: 'Involve', Inter, sans-serif;
+    font-variation-settings: 'wght' 400; 
+    color: white;
+    line-height: 28px;}
 .p1 {
  
         font-size: 28px;
@@ -981,7 +994,8 @@ margin-bottom: 30px;}
     gap: 24px;
     grid-template-areas:
       "large large mid"
-      "small1 small2 small3";
+      "small1 small2 small3"
+      "small4 small4 small4";
   }
 
    .blocks-grid-video {
@@ -1042,6 +1056,9 @@ margin-bottom: 30px;}
     border-radius: 24px;
     height: 123px;
     display: flex;
+    align-items: center
+
+
   }
   
   /* Контент блоков */
@@ -1054,8 +1071,17 @@ margin-bottom: 30px;}
     width: 50%;
     height: 100%;
     object-fit: cover;
+    padding: 5px;
+    border-radius: 25px;
   }
+
+  .play {display: flex;
+  align-items: center;
+justify-content: center;}
+
+  .block_long_video h5{ font-size: 20px;}
   
+  .benefit .bold-p {margin-bottom: 4px;}
   .block-content {
     
     padding: 15px;
@@ -1860,7 +1886,7 @@ height: auto;
 
 
     .btn {
-        width:100%;
+    
         height: 30px;
          margin: 0;
          align-items: center;
