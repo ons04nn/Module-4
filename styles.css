@@ -147,16 +147,41 @@ cursor: pointer;
     cursor: pointer;
 }
 
+.icon-back{
+  background-color: rgba(255,255,255,0.2);
+  border-radius: 30px;
+  border: 1px solid #fff;
+  color: white;
+  display: flex;
+  align-items: center;
+  padding: 0px 80px;
+  margin: 80px 0px;
+}
+
+.icons-back{
+  gap:25px;
+  display: flex;
+}
+
+.link {
+   margin-right: 10px;
+  margin-top: 10px;
+}
+
 .adv {width: 240px;
 display: flex;
 flex-direction: column;}
 
-.arti_jumper {
-  display: flex;
-  flex-direction: row;
+
+
+.preview h1 {
+  font-size: 64px;
+  line-height: 64px;
+ display: flex;
+ align-items: center;
+ justify-content: center;
+
 }
-
-
 .arti_jumper .ar_right{
   width: 50%;
 }
@@ -240,6 +265,15 @@ align-items: flex-start
       max-width: 1350px;
       margin: 0 auto;
     
+}
+.arti_jumper {
+  display: flex;
+  flex-direction: row;
+  margin-bottom: 80px;
+}
+
+.ar_right p {
+  margin-bottom: 40px;
 }
 
 .container2 {
@@ -650,6 +684,11 @@ p {
     font-variation-settings: 'wght' 400; 
 }
 
+.comment-row{
+  display: flex;
+  justify-content: space-between;
+
+}
 
 .cloud-bg {
     background-image: url(./src/assets/images/bg_cloud.png);
@@ -706,7 +745,7 @@ display: flex;
   .white-btn {
     background-color: #fff;
     color: #000;
-    border: 2px solid #000;
+    
   }
   .white-btn-trs {
     background-color: rgba(255, 255, 255, 0.2);
@@ -1252,6 +1291,80 @@ background-size: cover;
   display: flex;
   align-items: center;
   padding: 40px;
+  margin: 80px 0px;
+}
+
+.border-trans-comment {
+      background-color: rgba(255, 255, 255, 0.2);
+    border-radius: 30px;
+    border: 1px solid #fff;
+    color: white;
+    display: flex;
+    justify-content: space-between;
+    padding: 40px;
+    margin: 80px 0px;
+    flex-direction: column;
+}
+
+
+
+
+.preview-ban {
+  margin-bottom: 70px;
+height: auto;  
+  border-radius: 30px;
+  border: 1px solid #fff;
+  color: white;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 200px;
+  background-image: url(.//src/assets/images/preview/preview2.png);
+  background-size: cover;
+  background-position: center;
+   flex-direction: column;
+}
+
+.white-back {
+  background-color: rgba(255,255,255,1);
+  border-radius: 30px;
+  border: 1px solid #fff;
+  color: white;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 5px;
+  margin: 80px 0px;
+  gap: 15px;
+}
+
+.btn-blue {
+  background-color: #090923;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color:white;
+  gap: 10px;
+  font-size: 24px;
+  padding: 0px 20px;
+}
+
+.links {
+  display: flex;
+}
+
+.white-back .TG {
+  margin-right: 0px;
+}
+
+
+.white-back p {
+  color: #000;
+}
+
+
+.girl_art {
+  margin-bottom: 80px;
 }
 .test {
   width: 100vw;
@@ -1317,6 +1430,23 @@ background-size: cover;
 
 
   @media (max-width: 1400px) {
+
+      .arti_jumper .ar_left{
+      
+        padding-right: 0px;
+      }
+      
+  
+      .adv {
+        display:none;
+      }
+        
+        
+      .arti_jumper {
+        display: flex;
+        flex-direction: column;
+      
+      }
 
 
 .block_xxl{height: auto;}
@@ -1511,19 +1641,8 @@ background-size: cover;
   
     @media (max-width: 900px) {
 
-      .arti_jumper .ar_left{
-      
-        padding-right: 0px;
-      }
-      
-  
-      .adv {display: none;}
-        
-        
-      .arti_jumper {
-        display: flex;
-        flex-direction: column;
-      }
+      .preview h1 {font-size: 24px;}
+    
     .block {
       background: white;
       border: solid #000;
@@ -1650,6 +1769,20 @@ background-size: cover;
 
 
   @media (max-width: 500px) {
+
+    .border-trans {
+  height: 122px;
+  padding: 20px;
+}
+  .border-trans-comment {
+  height: 122px;
+  padding: 20px;
+}
+
+.preview-ban {
+  padding: 20px;
+ 
+}
 
     ul {max-height: 500px;}
 
