@@ -184,6 +184,7 @@ flex-direction: column;}
  display: flex;
  align-items: center;
  justify-content: center;
+ text-align: center;
 
 }
 .arti_jumper .ar_right{
