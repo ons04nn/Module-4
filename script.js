@@ -66,37 +66,3 @@ document.addEventListener('DOMContentLoaded', function() {
     track.style.animationDuration = animationDuration;
     document.documentElement.style.setProperty('--translate-value', `-${totalWidth}px`);
   }
-
-  const blocksData = [
-    {
-      type: 'large',
-      image: 'images/1.jpg',
-      tag: 'Категория',
-      date: '2023-11-15',
-      title: 'Заголовок'
-    }
-    // ...
-  ];
-  
-  function createBlock(data) {
-    const block = document.createElement('div');
-    block.className = `block block_${data.type}`;
-    block.innerHTML = `
-      <img src="${data.image}" alt="${data.title}">
-      <div class="content">
-        <span class="tag">${data.tag}</span>
-        <time>${data.date}</time>
-        <h3>${data.title}</h3>
-      </div>
-    `;
-    return block;
-  }
-  
-  function initBlocks() {
-    const container = document.getElementById('blocks-container');
-    blocksData.forEach(data => {
-      container.appendChild(createBlock(data));
-    });
-  }
-  
-  document.addEventListener('DOMContentLoaded', initBlocks);
