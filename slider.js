@@ -23,6 +23,10 @@ $(document).ready(function(){
       slidesToScroll: 1,
       arrows: false,
       dots: false,
+      autoplay: true,
+      autoplaySpeed: 2000,
+      speed: 2000,
+      cssEase: 'ease-in-out',
 
 
 
@@ -40,5 +44,6 @@ $(document).ready(function(){
               }
           },
       ]
+      
   });
 });

@@ -1080,11 +1080,13 @@ margin-bottom: 30px;}
 
 
   .slick-slide {
-    scale: 80%;
-  }
+    transition: transform 0.8s ease-in-out;
+    transform: scale(0.8);
+
+ }
 
   .slick-slide.slick-current.slick-active{
-    scale: 100%;
+    transform: scale(1);
   }
   
   /* Контент блоков */
