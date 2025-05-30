@@ -158,14 +158,17 @@ cursor: pointer;
   color: white;
   display: flex;
   align-items: center;
+  justify-content: center;
   padding: 0px 80px;
   margin: 80px 0px;
+  margin:10px;
 }
 
 .icons-back{
   gap:25px;
   display: flex;
 }
+
 
 .link {
    margin-right: 10px;
@@ -371,6 +374,11 @@ align-items: flex-start
 
 
 h1 {
+ 
+  font-size: 1.7rem;
+}
+
+.question {
  
   font-size: 1.7rem;
 }
@@ -989,7 +997,7 @@ margin-bottom: 30px;}
 
  /* Основные стили */
 .articles {
-    padding: 60px 0;
+    padding: 50px 0;
   }
 
   .video {
@@ -1404,7 +1412,7 @@ height: auto;
 }
 
 .links {
-  display: flex;
+
 }
 
 .white-back .TG {
@@ -1485,6 +1493,22 @@ height: auto;
 
   @media (max-width: 1400px) {
 
+    .answers {
+      display: flex;
+      margin-top: 30px;
+      flex-direction: column;
+      gap:30px;
+    }
+
+  
+
+    .steps {
+      margin-bottom: 0px;
+      opacity: 0.5;
+      font-size: 40px;
+    }
+
+
     .item {
       width: 30%;
       height: 650px;
@@ -1497,6 +1521,12 @@ height: auto;
       max-width: 100%;
       height: auto;
       max-width: 599px;
+      width: 100%;
+    }
+
+    .icons-back{
+      gap: 0px;
+      justify-content: space-between;
     }
 
       .magic {
@@ -1555,6 +1585,9 @@ height: auto;
           "small3 small4";
       }
     
+      .video {
+        padding: 40px 0 0;
+      }
      .blocks-grid-video {
     grid-template-columns: 1fr;
     grid-template-rows: auto;
@@ -1631,7 +1664,7 @@ height: auto;
 
     header {
         justify-content: space-evenly;
-      
+      padding-bottom: 153px;
         position: relative;
     }
 
@@ -1639,7 +1672,10 @@ height: auto;
       justify-content: space-evenly;
       position: relative;
       gap:200px;
+      padding-bottom: 37px;
   }
+
+
     .logo-header{
         right:0;
     }
@@ -1714,6 +1750,24 @@ height: auto;
   
     @media (max-width: 900px) {
 
+      
+      .steps {
+        margin-bottom: 0px;
+        opacity: 0.5;
+        font-size: 30px;
+      }
+   
+
+      .ar_right p {
+        margin-bottom: 20px;
+      }
+
+      .ar_left p {
+        margin-bottom: 20px;
+      }
+
+    .icon-back{padding: 0px 40px;}
+
       .item {
         width: 30%;
         height: 599px;
@@ -1721,7 +1775,8 @@ height: auto;
         margin: 0 15px;
       }
 
-      .preview h1 {font-size: 24px;}
+      .preview h1 {font-size: 24px;
+        line-height: 30px;}
     
     .block {
       background: white;
@@ -1762,6 +1817,15 @@ height: auto;
             max-width: 500px;
                 margin: 0 auto;  
                  
+        }
+
+
+        .arti_jumper .ar_left {
+          width: 100%;
+        }
+
+        .arti_jumper .ar_right {
+          width: 100%;
         }
 
         footer {
@@ -1849,6 +1913,44 @@ height: auto;
 
   @media (max-width: 500px) {
 
+    .answer {
+      font-size: 16px;
+    }
+
+    .hero {
+      margin-bottom: 183px;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      
+  }
+
+    .btn-blue {
+      background-color: #090923;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color:white;
+      gap: 10px;
+      font-size: 20px;
+      padding: 0px 20px;
+    }
+
+    .girl_art {
+      margin-bottom: 30px;
+    }
+
+    .white-back {
+      margin: 40px 0px;
+    }
+
+   
+
+    .icon-back{padding: 0px 20px;}
+
+
+    .links {}
+
     .item {
       width: 30%;
       height: 350px;
@@ -1861,12 +1963,12 @@ height: auto;
   padding: 20px;
 }
   .border-trans-comment {
-  height: 122px;
+  height: auto;
   padding: 20px;
 }
 
 .preview-ban {
-  padding: 20px;
+padding: 100px 0px;
  
 }
 
@@ -1918,9 +2020,8 @@ height: auto;
  
 
   .articles {
-      
-    display: flex;
-    justify-content: center;
+    padding: 20px 0;
+
 }
 
 
@@ -1961,6 +2062,7 @@ height: auto;
         background-position: 50%;
         height: 390px;
         margin-bottom: 0px;
+        margin-top: 20px;
       
     }
 
@@ -2001,6 +2103,11 @@ height: auto;
      line-height: 100%;}
   h1 {font-size: 64px;
 line-height: 100%;}
+.question {
+ 
+  font-size: 40px;
+  line-height: 100%;
+}
   h2 {font-size: 24px;}
   h3 {font-size: 18px;}
   p {font-size: 14px;
