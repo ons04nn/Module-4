@@ -606,7 +606,7 @@ h4 {
    
         font-family: 'Involve', Inter, sans-serif;
         line-height:100%;
-        font-variation-settings: 'wght' 400; 
+        font-variation-settings: 'wght' 500; 
         color: black;
         font-size: 36px;
     
@@ -614,7 +614,7 @@ h4 {
 h5 {
     font-family: 'Involve', Inter, sans-serif;
     line-height:150%;
-    font-variation-settings: 'wght' 400; 
+    font-variation-settings: 'wght' 500; 
     color: black;
     font-size: 26px;
 }
@@ -2016,6 +2016,8 @@ padding: 100px 0px;
     margin: 0;
     line-height: 1;
   }
+
+  
   
  
 
