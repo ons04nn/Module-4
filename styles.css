@@ -193,8 +193,27 @@ flex-direction: column;}
   border: 0;
 }
 
+.back_arrow {
+  margin-bottom: 195px;
+}
+.preview-card {
+    background-image: url(.//src/assets/images/preview/preview2.png);
+  background-size: cover;
+  background-position: center;
+  height: auto;  
+  border-radius: 30px;
+  border: 1px solid #fff;
+  color: white;
+  display: flex;
+  flex-direction: column;
+ 
+  padding: 50px;
+   padding-bottom: 200px;
+}
 
-
+.preview {
+      margin-bottom: 80px;
+}
 .preview h1 {
   font-size: 64px;
   line-height: 64px;
@@ -202,7 +221,7 @@ flex-direction: column;}
  align-items: center;
  justify-content: center;
  text-align: center;
-
+padding-bottom: 8px;
 }
 .arti_jumper .ar_right{
   width: 50%;
@@ -582,7 +601,7 @@ h1{
 }
 
 
-
+.textik h2 
 h2 {
     font-size: 64px;
     font-family: 'Involve', Inter, sans-serif;
@@ -618,7 +637,16 @@ h5 {
     color: black;
     font-size: 26px;
 }
-
+h6 {
+   
+        font-family: 'Involve', Inter, sans-serif;
+        line-height:100%;
+        font-variation-settings: 'wght' 500; 
+        color: white;
+        font-size: 24px;
+        margin-bottom: 15px;
+    
+}
 
 
 
@@ -856,6 +884,7 @@ li {
   display: flex;
   gap:140px;
 }
+
 .grad {
     display: flex;
 }
@@ -1344,8 +1373,9 @@ background-size: cover;
 
 
 
+
 .border-trans {
-  height: 182px;
+  min-height: 182px;
   background-color: rgba(255,255,255,0.2);
   border-radius: 30px;
   border: 1px solid #fff;
@@ -1353,7 +1383,7 @@ background-size: cover;
   display: flex;
   align-items: center;
   padding: 40px;
-  margin: 80px 0px;
+  margin-bottom: 80px;
 }
 
 .border-trans-comment {
@@ -1369,33 +1399,67 @@ background-size: cover;
 }
 
 
-
+.back_arrow {
+  display: flex;
+  justify-content: left;
+}
 
 .preview-ban {
   margin-bottom: 70px;
-height: auto;  
-  border-radius: 30px;
-  border: 1px solid #fff;
-  color: white;
+
   display: flex;
   align-items: center;
   justify-content: center;
-  padding: 200px;
-  background-image: url(.//src/assets/images/preview/preview2.png);
-  background-size: cover;
-  background-position: center;
+  
    flex-direction: column;
 }
 
+body.kak_legko_prosnutsa .preview-card {
+  background-image: url(.//src/assets/images/preview/kak_legko_prosnutsa.png);
+}
+
+body.rol_melatonina .preview-card {
+  background-image: url(.//src/assets/images/preview/rol_melatonina.png);
+}
+
+body.bessonnitsa_ili_prosto .preview-card {
+  background-image: url(.//src/assets/images/preview/bessonnitsa_ili_prosto.png);
+}
+
+body.stress_vizivaet_bessonitsu .preview-card {
+  background-image: url(.//src/assets/images/preview/stress_vizivaet_bessonitsu.png);
+}
+
+body.krepkiy_son_u_kaghdogo .preview-card {
+  background-image: url(.//src/assets/images/preview/krepkiy_son_u_kaghdogo.png);
+}
+
+body.dnevnoy_son .preview-card {
+  background-image: url(.//src/assets/images/preview/dnevnoy_son.png);
+}
+
+body.dvuspalnaya_krovaty_xiaomi .preview-card {
+  background-image: url(.//src/assets/images/preview/dvuspalnaya_krovaty_xiaomi.png);
+}
+
+body.gormony_i_bessonitsa .preview-card {
+  background-image: url(.//src/assets/images/preview/gormony_i_bessonitsa.png);
+}
+
+body.kak_tsveta_vliyaut .preview-card {
+  background-image: url(.//src/assets/images/preview/kak_tsveta_vliyaut.png);
+}
+
+
 .white-back {
   background-color: rgba(255,255,255,1);
-  border-radius: 30px;
+  border-radius: 24px;
   border: 1px solid #fff;
   color: white;
   display: flex;
   align-items: center;
   justify-content: space-between;
-  padding: 5px;
+  padding: 15px 10px;
   margin: 80px 0px;
   gap: 15px;
 }
@@ -1959,18 +2023,26 @@ height: auto;
     }
 
     .border-trans {
-  height: 122px;
+  min-height: 122px;
   padding: 20px;
+    margin-bottom: 30px;
 }
   .border-trans-comment {
   height: auto;
   padding: 20px;
 }
 
-.preview-ban {
-padding: 100px 0px;
- 
+.back_arrow {
+  margin-bottom: 50px;
 }
+.preview-card {
+  padding-bottom: 50px;
+}
+
+.preview {
+      margin-bottom: 30px;
+}
+
 
     ul {max-height: 500px;}
 
@@ -2176,9 +2248,18 @@ line-height: 100%;}
         font-size: 18px;
     }
 
+  
+
     h5{
         font-size: 16px;
     }
+
+       h6{
+        font-weight: 500;
+        font-size: 16px;
+        margin-bottom: 8px;
+    }
+
     .micro-text {
         font-size: 13px;
 }
