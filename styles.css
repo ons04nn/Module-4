@@ -307,6 +307,26 @@ align-items: flex-start
       margin: 0 auto;
     
 }
+
+.answer-main {
+  max-width: 80%;
+}
+
+.answer-main .p1 {
+  margin-bottom: 30px;
+  margin-top:10px;
+}
+
+.answer-main h3 {
+  margin-bottom: 30px;x§
+}
+
+
+.flexi-cards {
+  display: flex;
+  gap:30px;
+
+}
 .arti_jumper {
   display: flex;
   flex-direction: row;
@@ -1492,11 +1512,26 @@ body.kak_tsveta_vliyaut .preview-card {
 .girl_art {
   margin-bottom: 80px;
 }
+
+.bg-light {
+  position: absolute;
+  width:100%;
+}
 .test {
   width: 100vw;
   height: 100vh;
   background-color: #080A4C;
   background-image: url('./src/assets/images/test/bg1.png');
+  background-size: cover;
+  color: #fff;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.test-ans {
+  width: 100vw;
+  background-color: #090923;
   background-size: cover;
   color: #fff;
   display: flex;
