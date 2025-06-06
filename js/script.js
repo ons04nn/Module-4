@@ -1,4 +1,15 @@
 $(function() {
+    $('.nav-item').click(function() {
+        let tab = $(this).data('tab');
+        $('.nav-item').removeClass('active');
+        $('.tab-content').removeClass('active');
+        $(this).addClass('active');
+        $('.tab-content[data-content="' + tab + '"]').addClass('active');
+    });
+});
+
+
+$(function() {
     const dataGroup = [
         {
             question: "Сколько часов <br>в день вы спите?",
