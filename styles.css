@@ -318,15 +318,15 @@ align-items: flex-start
 }
 
 .answer-main h3 {
-  margin-bottom: 30px;x§
+  margin-bottom: 30px;
 }
 
 
 .flexi-cards {
   display: flex;
   gap:30px;
-
 }
+
 .arti_jumper {
   display: flex;
   flex-direction: row;
@@ -595,7 +595,29 @@ ul::column::scroll-marker:target-current {
 }
 
 
+.color-1 .card {
+  background-color: #de7678;
+}
 
+.color-2 .card {
+  background-color: #E83033;
+}
+
+.color-3 .card {
+  background-color: #E88C30;
+}
+
+.color-4 .card {
+  background-color: #FFF500;
+}
+
+.color-5 .card {
+  background-color: #96CE60;
+}
+
+.color-6 .card {
+  background-color: #1BA3EA;
+}
 
 .benefits {
     margin-top: 100px;
@@ -621,7 +643,8 @@ h1{
 }
 
 
-.textik h2 
+
+
 h2 {
     font-size: 64px;
     font-family: 'Involve', Inter, sans-serif;
@@ -1386,9 +1409,7 @@ background-size: cover;
 }
 
 .tab-content.active {
-    display: flex;
-    flex-wrap: wrap;
-    margin-left: -24px;
+ display: grid;
 }
 
 
