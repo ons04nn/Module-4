@@ -1,4 +1,5 @@
 document.addEventListener('DOMContentLoaded', function() {
+    // Ждем загрузки всех изображений
     const images = document.querySelectorAll('.brandLogo img');
     let loadedCount = 0;
     
@@ -7,6 +8,7 @@ document.addEventListener('DOMContentLoaded', function() {
       const logos = document.querySelectorAll('.brandLogo');
       const originalSet = Array.from(logos).slice(0, 7);
       
+      // Рассчитываем общую ширину оригинального набора
       let totalWidth = 0;
       originalSet.forEach(logo => {
         totalWidth += logo.offsetWidth;
