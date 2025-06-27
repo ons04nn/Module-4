@@ -49,33 +49,3 @@ $(document).ready(function(){
 });
 
 
-$(document).ready(function(){
-  $('.navbar').slick({
-      centerPadding: '200px',
-      infinite: true,
-      slidesToShow: 3,
-      slidesToScroll: 3,
-      arrows: false,
-      dots: false,
-      speed: 20,
-      cssEase: 'ease-in-out',
-
-
-
-      responsive: [{
-          breakpoint: 1400,
-          settings: {
-                  centerPadding: '50px',
-              }
-          },
-          {
-          breakpoint: 900,
-          settings: {
-                  centerPadding: '30px',
-                  
-              }
-          },
-      ]
-      
-  });
-});
