@@ -22,6 +22,10 @@ html {
     max-width: 100%;
 }
 
+#menu-toggle:checked ~ .menu {
+  display: block;
+}
+
 
 
 body {
@@ -489,7 +493,7 @@ ul::scroll-button(*):active {
 
 ul::scroll-button(*):disabled {
   color: rgba(0,0,0,0);
-  cursor: unset;
+  cursor: pointer;
 }
 
 .menu .ul {color: rgba(0,0,0,0)}
@@ -1277,6 +1281,7 @@ margin-bottom: 30px;}
   
 
 
+
   .slick-slide {
     transition: transform 0.8s ease-in-out;
     transform: scale(0.8);
@@ -1361,6 +1366,7 @@ justify-content: center;}
     font-size: 24px;
     display: inline-block;
     padding-bottom: 10px;
+    z-index: 60000;
   }
 
   .copy-notification {
@@ -1491,6 +1497,7 @@ li:active {
 .menu-icon {
   cursor: pointer;
   transition: transform 0.2s;
+z-index: 60000;
 }
 
 .menu-icon:hover {
@@ -1519,6 +1526,17 @@ li:active {
   transform: scale(0.95);
 }
   
+
+  
+  
+  #menu-toggle {
+    display: none;
+  }
+  
+  #menu-toggle:checked ~ .menu {
+    display: block;
+  }
+  
   .menu {
     display: none;
     position: absolute;
@@ -1531,17 +1549,6 @@ li:active {
     box-shadow: 0 5px 10px rgba(0,0,0,0.1);
     z-index: 50000;
   }
-
-  
-  
-  #menu-toggle {
-    display: none;
-  }
-  
-  #menu-toggle:checked ~ .menu {
-    display: block;
-  }
-  
 
 
   
@@ -2359,7 +2366,8 @@ flex-direction: column;}
         }
         .slon-footer {
 
-            transform:scale(0.6)
+            zoom: 0.6;
+   
         }
 
   .benefito {
@@ -2475,6 +2483,8 @@ flex-direction: column;}
 
 
   @media (max-width: 500px) {
+
+    
 
 
       .block_xxl {
@@ -2779,7 +2789,7 @@ line-height: 100%;}
 
 
       .block_xxl {
-  width: 200px;
+  width: 100%;
   height: 350px;
   border-radius: 24px;}
 
