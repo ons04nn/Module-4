@@ -24,61 +24,139 @@ document.addEventListener('DOMContentLoaded', function() {
     });
   });
 
-  // Обработчики перетаскивания мышью
+  // Обработчики для touch и мыши
   const startDrag = (e) => {
     isDragging = true;
     tabsBox.classList.add("dragging");
     startX = e.pageX || e.touches?.[0]?.pageX || 0;
     scrollLeft = tabsBox.scrollLeft;
+    
+    if (e.touches) {
+      e.preventDefault();
+    }
   };
 
   const dragging = (e) => {
     if (!isDragging) return;
-    e.preventDefault();
+    
     const x = e.pageX || e.touches?.[0]?.pageX || 0;
     const walk = (x - startX) * 2;
     tabsBox.scrollLeft = scrollLeft - walk;
     handleIcons(tabsBox.scrollLeft);
+    
+    if (e.cancelable) {
+      e.preventDefault();
+    }
   };
 
-  const dragStop = () => {
+  const dragStop = (e) => {
+    if (!isDragging) return;
+    
     isDragging = false;
     tabsBox.classList.remove("dragging");
+    
+    // Проверка на клик
+    const x = e.pageX || (e.changedTouches && e.changedTouches[0].pageX) || 0;
+    const movedDistance = Math.abs(x - startX);
+    
+    if (movedDistance < 10) {
+      const targetTab = document.elementFromPoint(x, e.clientY || 50);
+      if (targetTab && targetTab.closest('.nav-item')) {
+        targetTab.closest('.nav-item').click();
+      }
+    }
   };
 
-  // Обработчик двухпальцевого скролла на тачпаде
-  const handleTrackpadScroll = (e) => {
-    // Проверяем, что скролл горизонтальный (deltaX) и не вертикальный (deltaY)
+  // Простой обработчик для трекпада без инерции
+  const handleWheelScroll = (e) => {
     if (Math.abs(e.deltaX) > Math.abs(e.deltaY)) {
       e.preventDefault();
-      tabsBox.scrollLeft += e.deltaX;
+      const sensitivity = 0.5;  // Чувствительность (0.1-1.0)
+    const minDelta = 0.5;     // Минимальное учитываемое движение
+    const scrollMultiplier = 3; // Усиление прокрутки
+      // Прямая прокрутка без инерции с плавностью
+      tabsBox.scrollBy({
+        left: e.deltaX * 3 ,
+    // 'auto' вместо 'smooth' для мгновенного отклика
+      });
       handleIcons(tabsBox.scrollLeft);
     }
   };
 
-  // Добавляем обработчики событий
+  // Добавляем обработчики
   tabsBox.addEventListener("mousedown", startDrag);
   tabsBox.addEventListener("touchstart", startDrag, { passive: false });
-  
   tabsBox.addEventListener("mousemove", dragging);
   tabsBox.addEventListener("touchmove", dragging, { passive: false });
-  
-  // Добавляем обработчик для трекпада
-  tabsBox.addEventListener("wheel", handleTrackpadScroll, { passive: false });
-
+  tabsBox.addEventListener("wheel", handleWheelScroll, { passive: false });
   document.addEventListener("mouseup", dragStop);
   document.addEventListener("touchend", dragStop);
-
-  // Отключаем стандартное поведение для кликов по табам на тач-устройствах
-  tabsBox.addEventListener("touchstart", (e) => {
-    if (e.target.closest('.nav-item')) {
-      e.preventDefault();
-    }
-  }, { passive: false });
+  document.addEventListener("touchcancel", dragStop);
 
   // ===== 2. Логика фильтрации статей =====
-  // ... (остальная часть вашего кода остается без изменений)
+  const blocksGrid = document.querySelector('.blocks-grid');
+  const originalBlocks = blocksGrid.innerHTML;
+  const articlesData = JSON.parse(document.getElementById('articles-data').textContent);
+  delete articlesData['все статьи'];
 
-  // Инициализация стрелок при загрузке
+  function createBlock(article) {
+    if (article.type === 'large') {
+      return `
+        <div class="block block_large">
+          <img src="${article.image}" alt="${article.title}" class="block-image">
+          <div class="block-content">
+            <div class="block-meta">
+              <span class="block-tag">${article.tag}</span>
+              <time class="block-date" datetime="${article.date}">${new Date(article.date).toLocaleDateString('ru-RU')}</time>
+            </div>
+            <a href="${article.link}"><h4 class="block-title">${article.title}</h4></a>
+          </div>
+        </div>
+      `;
+    }
+    return '';
+  }
+
+  const filterArticles = (tag) => {
+    allTabs.forEach(item => item.classList.remove('active'));
+    
+    if (tag === 'все статьи') {
+      blocksGrid.innerHTML = originalBlocks;
+      return;
+    }
+
+    if (articlesData[tag]) {
+      let filteredHTML = '';
+      articlesData[tag].forEach(article => {
+        filteredHTML += createBlock(article);
+      });
+      
+      filteredHTML += `
+        <div class="container padding-tops">
+          <a href="./all_articles.html?tag=${encodeURIComponent(tag)}" class="btn white-btn-trs">
+            Все статьи по теме "${tag}"
+          </a>
+        </div>
+      `;
+      
+      blocksGrid.innerHTML = filteredHTML;
+    }
+  };
+
+  allTabs.forEach(tab => {
+    tab.addEventListener('click', function(e) {
+      if (isDragging) {
+        e.preventDefault();
+        return;
+      }
+      
+      const tag = this.textContent.trim();
+      filterArticles(tag);
+      this.classList.add('active');
+    });
+  });
+
+  // Инициализация
   handleIcons(tabsBox.scrollLeft);
+  setTimeout(() => handleIcons(tabsBox.scrollLeft), 500);
 });
