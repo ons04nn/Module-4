@@ -1532,16 +1532,7 @@ li:active {
     z-index: 50000;
   }
 
-    .menus {
-color: white;
-  }
-
-  .menus_ul {display: flex;
-flex-direction: column;}
-
-.menus_ul_li {
-  padding: 5px;
-}
+  
   
   #menu-toggle {
     display: none;
@@ -1551,21 +1542,8 @@ flex-direction: column;}
     display: block;
   }
   
-  .menu ul {
-    list-style: none;
-    padding: 0;
-    margin: 0;
-  }
-  
-  .menu li {
-    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
-    display: flex;
-    justify-content: center;
-  }
-  
-  .menu li:last-child {
-    border-bottom: none;
-  }
+
+
   
   .menu-link {
     display: block;
@@ -1969,6 +1947,35 @@ body.kak_tsveta_vliyaut .preview-card {
 
  .centerr {
       }
+
+
+
+          .menus {
+color: white;
+  }
+
+  .menus_ul {display: flex;
+flex-direction: column;}
+
+.menus_ul_li {
+  padding: 5px;
+}
+
+  .menu ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+  }
+  
+  .menu li {
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+    display: flex;
+    justify-content: center;
+  }
+  
+  .menu li:last-child {
+    border-bottom: none;
+  }
 
 
 @media (min-width: 1440px){
@@ -2470,8 +2477,9 @@ flex-direction: column;}
   @media (max-width: 500px) {
 
 
-      .block_xxl {width: 350%;
-    height: 500px;
+      .block_xxl {
+  width: 250px;
+  height: 350px;
   border-radius: 24px;}
 
     .answer {
@@ -2767,3 +2775,12 @@ line-height: 100%;}
 }
   }
 
+  @media (max-width: 400px) {
+
+
+      .block_xxl {
+  width: 200px;
+  height: 350px;
+  border-radius: 24px;}
+
+      }
