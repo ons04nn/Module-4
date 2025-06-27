@@ -1,5 +1,5 @@
 document.addEventListener('DOMContentLoaded', function() {
-  const copyButtons = document.querySelectorAll('.icon-back');
+  const copyButtons = document.querySelectorAll('.icon-back.linki');
   
   const notification = document.createElement('div');
   notification.className = 'copy-notification';
