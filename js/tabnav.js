@@ -16,17 +16,15 @@ document.addEventListener('DOMContentLoaded', function() {
   // Обработчики стрелок
   arrowIcons.forEach(icon => {
     icon.addEventListener("click", () => {
-      // Плавная прокрутка вместо резкого перемещения
       tabsBox.scrollBy({
         left: icon.id === "left" ? -340 : 340,
         behavior: 'smooth'
       });
-      // Обновляем иконки после завершения анимации
       setTimeout(() => handleIcons(tabsBox.scrollLeft), 300);
     });
   });
 
-  // Улучшенные обработчики перетаскивания для Safari
+  // Обработчики перетаскивания мышью
   const startDrag = (e) => {
     isDragging = true;
     tabsBox.classList.add("dragging");
@@ -38,7 +36,7 @@ document.addEventListener('DOMContentLoaded', function() {
     if (!isDragging) return;
     e.preventDefault();
     const x = e.pageX || e.touches?.[0]?.pageX || 0;
-    const walk = (x - startX) * 2; // Умножаем для более быстрого скролла
+    const walk = (x - startX) * 2;
     tabsBox.scrollLeft = scrollLeft - walk;
     handleIcons(tabsBox.scrollLeft);
   };
@@ -48,17 +46,30 @@ document.addEventListener('DOMContentLoaded', function() {
     tabsBox.classList.remove("dragging");
   };
 
-  // Добавляем обработчики для мыши и тач-событий
+  // Обработчик двухпальцевого скролла на тачпаде
+  const handleTrackpadScroll = (e) => {
+    // Проверяем, что скролл горизонтальный (deltaX) и не вертикальный (deltaY)
+    if (Math.abs(e.deltaX) > Math.abs(e.deltaY)) {
+      e.preventDefault();
+      tabsBox.scrollLeft += e.deltaX;
+      handleIcons(tabsBox.scrollLeft);
+    }
+  };
+
+  // Добавляем обработчики событий
   tabsBox.addEventListener("mousedown", startDrag);
   tabsBox.addEventListener("touchstart", startDrag, { passive: false });
   
   tabsBox.addEventListener("mousemove", dragging);
   tabsBox.addEventListener("touchmove", dragging, { passive: false });
   
+  // Добавляем обработчик для трекпада
+  tabsBox.addEventListener("wheel", handleTrackpadScroll, { passive: false });
+
   document.addEventListener("mouseup", dragStop);
   document.addEventListener("touchend", dragStop);
 
-  // Отключаем стандартное поведение скролла для тач-устройств
+  // Отключаем стандартное поведение для кликов по табам на тач-устройствах
   tabsBox.addEventListener("touchstart", (e) => {
     if (e.target.closest('.nav-item')) {
       e.preventDefault();
